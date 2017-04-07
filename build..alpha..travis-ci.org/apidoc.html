@@ -1,0 +1,1836 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://djfarrelly.github.io/MailDev/"
+
+    >maildev (v0.14.0)</a>
+</h1>
+<h4>SMTP Server and Web Interface for reading and testing emails during development</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maildev">module maildev</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">maildev.</span>logger</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">maildev.</span>mailserver</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">maildev.</span>outgoing</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">maildev.</span>web</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maildev.logger">module maildev.logger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.logger.dir">
+            function <span class="apidocSignatureSpan">maildev.logger.</span>dir
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.logger.error">
+            function <span class="apidocSignatureSpan">maildev.logger.</span>error
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.logger.info">
+            function <span class="apidocSignatureSpan">maildev.logger.</span>info
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.logger.log">
+            function <span class="apidocSignatureSpan">maildev.logger.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.logger.setLevel">
+            function <span class="apidocSignatureSpan">maildev.logger.</span>setLevel
+            <span class="apidocSignatureSpan">(level)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.logger.warn">
+            function <span class="apidocSignatureSpan">maildev.logger.</span>warn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maildev.mailserver">module maildev.mailserver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.create">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>create
+            <span class="apidocSignatureSpan">(port, host, user, password)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.deleteAllEmail">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>deleteAllEmail
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.deleteEmail">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>deleteEmail
+            <span class="apidocSignatureSpan">(id, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.emit">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>emit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.end">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>end
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.getAllEmail">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>getAllEmail
+            <span class="apidocSignatureSpan">(done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.getEmail">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>getEmail
+            <span class="apidocSignatureSpan">(id, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.getEmailAttachment">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>getEmailAttachment
+            <span class="apidocSignatureSpan">(id, filename, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.getEmailEml">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>getEmailEml
+            <span class="apidocSignatureSpan">(id, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.getEmailHTML">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>getEmailHTML
+            <span class="apidocSignatureSpan">(id, baseUrl, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.getOutgoingHost">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>getOutgoingHost
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.getRawEmail">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>getRawEmail
+            <span class="apidocSignatureSpan">(id, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.isOutgoingEnabled">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>isOutgoingEnabled
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.listen">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>listen
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.on">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>on
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.relayMail">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>relayMail
+            <span class="apidocSignatureSpan">(idOrMailObject, isAutoRelay, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.removeAllListeners">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>removeAllListeners
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.removeListener">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>removeListener
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.setAutoRelayMode">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>setAutoRelayMode
+            <span class="apidocSignatureSpan">(enabled, rules)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.mailserver.setupOutgoing">
+            function <span class="apidocSignatureSpan">maildev.mailserver.</span>setupOutgoing
+            <span class="apidocSignatureSpan">(host, port, user, pass, secure)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">maildev.mailserver.</span>store</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maildev.outgoing">module maildev.outgoing</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.outgoing._createClient">
+            function <span class="apidocSignatureSpan">maildev.outgoing.</span>_createClient
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.outgoing.close">
+            function <span class="apidocSignatureSpan">maildev.outgoing.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.outgoing.getOutgoingHost">
+            function <span class="apidocSignatureSpan">maildev.outgoing.</span>getOutgoingHost
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.outgoing.isAutoRelayEnabled">
+            function <span class="apidocSignatureSpan">maildev.outgoing.</span>isAutoRelayEnabled
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.outgoing.isEnabled">
+            function <span class="apidocSignatureSpan">maildev.outgoing.</span>isEnabled
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.outgoing.relayMail">
+            function <span class="apidocSignatureSpan">maildev.outgoing.</span>relayMail
+            <span class="apidocSignatureSpan">(emailObject, emailStream, isAutoRelay, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.outgoing.setAutoRelayMode">
+            function <span class="apidocSignatureSpan">maildev.outgoing.</span>setAutoRelayMode
+            <span class="apidocSignatureSpan">(enabled, rules)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.outgoing.setup">
+            function <span class="apidocSignatureSpan">maildev.outgoing.</span>setup
+            <span class="apidocSignatureSpan">(host, port, user, pass, secure)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.maildev.web">module maildev.web</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.web.close">
+            function <span class="apidocSignatureSpan">maildev.web.</span>close
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.web.start">
+            function <span class="apidocSignatureSpan">maildev.web.</span>start
+            <span class="apidocSignatureSpan">(port, host, mailserver, user, password, basePathname)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maildev" id="apidoc.module.maildev">module maildev</a></h1>
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maildev.logger" id="apidoc.module.maildev.logger">module maildev.logger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.logger.dir" id="apidoc.element.maildev.logger.dir">
+        function <span class="apidocSignatureSpan">maildev.logger.</span>dir
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dir = function (){
+  if (logLevel &#x3e; 1) {
+    console[ fn ].apply(console, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.logger.error" id="apidoc.element.maildev.logger.error">
+        function <span class="apidocSignatureSpan">maildev.logger.</span>error
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (){
+  if (logLevel &#x3e; 1) {
+    console[ fn ].apply(console, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  store.push(object);
+
+  logger.log(&#x27;Saving email: &#x27;, mailObject.subject);
+
+  if (outgoing.isAutoRelayEnabled()) {
+    mailServer.relayMail(object, true, function (err) {
+      if (err) logger.<span class="apidocCodeKeywordSpan">error</span>(&#x27;Error when relaying email&#x27;, err);
+    });
+  }
+
+  eventEmitter.emit(&#x27;new&#x27;, object);
+}
+
+// Save an attachment
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.logger.info" id="apidoc.element.maildev.logger.info">
+        function <span class="apidocSignatureSpan">maildev.logger.</span>info
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function () {
+  if (logLevel &#x3e; 0)
+    console.info.apply(console, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  process.on(&#x27;SIGTERM&#x27;, function () {
+    async.parallel([
+      mailserver.end,
+      web.close
+    ], function(err, results) {
+      logger.<span class="apidocCodeKeywordSpan">info</span>(&#x27;Shutting down...&#x27;);
+      process.exit(0);
+    });
+  });
+
+  return mailserver;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.logger.log" id="apidoc.element.maildev.logger.log">
+        function <span class="apidocSignatureSpan">maildev.logger.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function (){
+  if (logLevel &#x3e; 1) {
+    console[ fn ].apply(console, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+object.time = new Date();
+object.read = false;
+object.envelope = envelope;
+object.source = path.join(tempDir, id + &#x27;.eml&#x27;);
+
+store.push(object);
+
+logger.<span class="apidocCodeKeywordSpan">log</span>(&#x27;Saving email: &#x27;, mailObject.subject);
+
+if (outgoing.isAutoRelayEnabled()) {
+  mailServer.relayMail(object, true, function (err) {
+    if (err) logger.error(&#x27;Error when relaying email&#x27;, err);
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.logger.setLevel" id="apidoc.element.maildev.logger.setLevel">
+        function <span class="apidocSignatureSpan">maildev.logger.</span>setLevel
+        <span class="apidocSignatureSpan">(level)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLevel = function (level) {
+  logLevel = level;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    .option(&#x27;-o, --open&#x27;, &#x27;Open the Web GUI after startup&#x27;)
+    .option(&#x27;-v, --verbose&#x27;)
+    .option(&#x27;--silent&#x27;)
+    .parse(process.argv);
+}
+
+if (config.verbose) {
+  logger.<span class="apidocCodeKeywordSpan">setLevel</span>(2);
+} else if (config.silent) {
+  logger.setLevel(0);
+}
+
+// Start the Mailserver &#x26; Web GUI
+mailserver.create(config.smtp, config.ip, config.incomingUser, config.incomingPass);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.logger.warn" id="apidoc.element.maildev.logger.warn">
+        function <span class="apidocSignatureSpan">maildev.logger.</span>warn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function (){
+  if (logLevel &#x3e; 1) {
+    console[ fn ].apply(console, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  });
+
+  if (email.attachments){
+    deleteAttachments(email.attachments);
+  }
+
+  logger.<span class="apidocCodeKeywordSpan">warn</span>(&#x27;Deleting email - %s&#x27;, email.subject);
+
+  store.splice(emailIndex, 1);
+
+  done(null, true);
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maildev.mailserver" id="apidoc.module.maildev.mailserver">module maildev.mailserver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.create" id="apidoc.element.maildev.mailserver.create">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>create
+        <span class="apidocSignatureSpan">(port, host, user, password)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (port, host, user, password) {
+
+  // Start the server &#x26; Disable DNS checking
+  if (legacy) {
+    smtp = simplesmtp.createServer({
+      disableDNSValidation: true,
+      requireAuthentication: !!(user &#x26;&#x26; password),
+      incomingUser: user,
+      incomingPassword: password
+    });
+
+    smtp.on(&#x27;startData&#x27;, handleLegacyDataStream);
+    smtp.on(&#x27;data&#x27;,      handleLegacyChunk);
+    smtp.on(&#x27;dataReady&#x27;, handleLegacyDataStreamEnd);
+
+    if (user &#x26;&#x26; password) {
+      smtp.on(&#x27;authorizeUser&#x27;, authorizeUser);
+    }
+  } else {
+    smtp = new SMTPServer({
+      incomingUser: user,
+      incomingPassword: password,
+      onAuth: authorizeUser,
+      onData: handleDataStream,
+      logger: false,
+      disabledCommands: !!(user &#x26;&#x26; password)?[&#x27;STARTTLS&#x27;]:[&#x27;AUTH&#x27;]
+    });
+  }
+
+  // Setup temp folder for attachments
+  createTempFolder();
+
+  mailServer.port = port || defaultPort;
+  mailServer.host = host || defaultHost;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (config.verbose) {
+  logger.setLevel(2);
+} else if (config.silent) {
+  logger.setLevel(0);
+}
+
+// Start the Mailserver &#x26; Web GUI
+mailserver.<span class="apidocCodeKeywordSpan">create</span>(config.smtp, config.ip, config.incomingUser, config.incomingPass);
+
+if (config.outgoingHost ||
+    config.outgoingPort ||
+    config.outgoingUser ||
+    config.outgoingPass ||
+    config.outgoingSecure) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.deleteAllEmail" id="apidoc.element.maildev.mailserver.deleteAllEmail">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>deleteAllEmail
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteAllEmail = function (done){
+
+  logger.warn(&#x27;Deleting all email&#x27;);
+
+  clearTempFolder();
+  store.length = 0;
+  eventEmitter.emit(&#x27;delete&#x27;, {id:&#x27;all&#x27;});
+
+  done(null, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  });
+
+});
+
+// Delete all emails
+router.delete(&#x27;/email/all&#x27;, function(req, res){
+
+  mailserver.<span class="apidocCodeKeywordSpan">deleteAllEmail</span>(function(err){
+    if (err) return res.status(500).json({ error: err.message });
+
+    res.json(true);
+  });
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.deleteEmail" id="apidoc.element.maildev.mailserver.deleteEmail">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>deleteEmail
+        <span class="apidocSignatureSpan">(id, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteEmail = function (id, done){
+  var email      = null;
+  var emailIndex = null;
+
+  store.forEach(function(element, index){
+    if (element.id === id){
+      email = element;
+      emailIndex = index;
+    }
+  });
+
+  if (emailIndex === null){
+    return done(new Error(&#x27;Email not found&#x27;));
+  }
+
+  //delete raw email
+  fs.unlink( path.join(tempDir, id + &#x27;.eml&#x27;), function (err) {
+    if (err) {
+      logger.error(err);
+    } else {
+      eventEmitter.emit(&#x27;delete&#x27;, {id:id, index:emailIndex});
+    }
+  });
+
+  if (email.attachments){
+    deleteAttachments(email.attachments);
+  }
+
+  logger.warn(&#x27;Deleting email - %s&#x27;, email.subject);
+
+  store.splice(emailIndex, 1);
+
+  done(null, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  });
+
+});
+
+// Delete email by id
+router.delete(&#x27;/email/:id&#x27;, function(req, res){
+
+  mailserver.<span class="apidocCodeKeywordSpan">deleteEmail</span>(req.params.id, function(err){
+    if (err) return res.status(500).json({ error: err.message });
+
+    res.json(true);
+  });
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.emit" id="apidoc.element.maildev.mailserver.emit">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>emit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (outgoing.isAutoRelayEnabled()) {
+    mailServer.relayMail(object, true, function (err) {
+      if (err) logger.error(&#x27;Error when relaying email&#x27;, err);
+    });
+  }
+
+  eventEmitter.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;new&#x27;, object);
+}
+
+// Save an attachment
+function saveAttachment(attachment){
+  var output = fs.createWriteStream(path.join(tempDir, attachment.contentId));
+  attachment.stream.pipe(output);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.end" id="apidoc.element.maildev.mailserver.end">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>end
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function (callback) {
+  var method = legacy ? &#x27;end&#x27; : &#x27;close&#x27;;
+  smtp[method](callback);
+  outgoing.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function handleLegacyChunk(connection, chunk) {
+  connection.saveStream.write(chunk);
+  connection.saveRawStream.write(chunk);
+}
+
+function handleLegacyDataStreamEnd(connection, done) {
+  connection.saveStream.<span class="apidocCodeKeywordSpan">end</span>();
+  connection.saveRawStream.end();
+  // ABC is the queue id to be advertised to the client
+  // There is no current significance to this.
+  done(null, &#x27;ABC&#x27;);
+}
+
+function handleDataStream(stream, session, callback) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.getAllEmail" id="apidoc.element.maildev.mailserver.getAllEmail">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>getAllEmail
+        <span class="apidocSignatureSpan">(done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAllEmail = function (done){
+  done(null, store);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+module.exports = function(app, mailserver, basePathname) {
+var router = express.Router();
+
+// Get all emails
+router.get(&#x27;/email&#x27;, function(req, res){
+
+  mailserver.<span class="apidocCodeKeywordSpan">getAllEmail</span>(function(err, emailList){
+    if (err) return res.status(404).json([]);
+
+    res.json(emailList);
+  });
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.getEmail" id="apidoc.element.maildev.mailserver.getEmail">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>getEmail
+        <span class="apidocSignatureSpan">(id, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEmail = function (id, done){
+
+  var email = store.filter(function(element){
+    return element.id === id;
+  })[0];
+
+  if (email) {
+    done(null, email);
+  } else {
+    done(new Error(&#x27;Email was not found&#x27;));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Returns a readable stream of the raw email
+ */
+
+mailServer.getRawEmail = function(id, done){
+
+  mailServer.<span class="apidocCodeKeywordSpan">getEmail</span>(id, function(err, email){
+    if (err) return done(err);
+
+    done(null, fs.createReadStream( path.join(tempDir, id + &#x27;.eml&#x27;) ) );
+  });
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.getEmailAttachment" id="apidoc.element.maildev.mailserver.getEmailAttachment">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>getEmailAttachment
+        <span class="apidocSignatureSpan">(id, filename, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEmailAttachment = function (id, filename, done){
+
+  mailServer.getEmail(id, function(err, email){
+    if (err) return done(err);
+
+    if (!email.attachments || !email.attachments.length) {
+      return done(new Error(&#x27;Email has no attachments&#x27;));
+    }
+
+    var match = email.attachments.filter(function(attachment){
+      return attachment.generatedFileName === filename;
+    })[0];
+
+    if (!match) {
+      return done(new Error(&#x27;Attachment not found&#x27;));
+    }
+
+    done(null, match.contentType, fs.createReadStream( path.join(tempDir, match.contentId) ) );
+
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  });
+
+});
+
+// Serve Attachments
+router.get(&#x27;/email/:id/attachment/:filename&#x27;, function(req, res){
+
+  mailserver.<span class="apidocCodeKeywordSpan">getEmailAttachment</span>(req.params.id, req.params.filename, function(err, contentType
+, readStream){
+    if (err) return res.status(404).json(&#x27;File not found&#x27;);
+
+    res.contentType(contentType);
+    readStream.pipe(res);
+  });
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.getEmailEml" id="apidoc.element.maildev.mailserver.getEmailEml">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>getEmailEml
+        <span class="apidocSignatureSpan">(id, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEmailEml = function (id, done) {
+  mailServer.getEmail(id, function(err, email){
+    if (err) return done(err);
+
+    var filename = email.id + &#x27;.eml&#x27;;
+
+    done(null, &#x27;message/rfc822&#x27;, filename, fs.createReadStream(path.join(tempDir, id + &#x27;.eml&#x27;)));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+  });
+
+  // Serve email.eml
+  router.get(&#x27;/email/:id/download&#x27;, function(req, res){
+
+mailserver.<span class="apidocCodeKeywordSpan">getEmailEml</span>(req.params.id, function(err, contentType, filename, readStream
+){
+  if (err) return res.status(404).json(&#x27;File not found&#x27;);
+
+  res.setHeader(&#x27;Content-disposition&#x27;, &#x27;attachment; filename=&#x27; + filename);
+  res.contentType(contentType);
+  readStream.pipe(res);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.getEmailHTML" id="apidoc.element.maildev.mailserver.getEmailHTML">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>getEmailHTML
+        <span class="apidocSignatureSpan">(id, baseUrl, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEmailHTML = function (id, baseUrl, done) {
+
+  if (!done &#x26;&#x26; typeof baseUrl === &#x27;function&#x27;) {
+    done = baseUrl;
+    baseUrl = null;
+  }
+
+  if (baseUrl)
+    baseUrl = &#x27;//&#x27; + baseUrl;
+
+  mailServer.getEmail(id, function(err, email) {
+    if (err) return done(err);
+
+    var html = email.html;
+
+    if (!email.attachments)
+      return done(null, html);
+
+    var embeddedAttachments = email.attachments.filter(function(attachment) {
+      return attachment.contentId;
+    });
+
+    var getFileUrl = function(id, baseUrl, filename) {
+      return (baseUrl || &#x27;&#x27;) + &#x27;/email/&#x27; + id + &#x27;/attachment/&#x27; + filename;
+    };
+
+    if (embeddedAttachments.length) {
+      embeddedAttachments.forEach(function(attachment) {
+        var regex = new RegExp(&#x27;src=(&#x22;|\&#x27;)cid:&#x27; + attachment.contentId  + &#x27;(&#x22;|\&#x27;)&#x27;, &#x27;g&#x27;);
+        var replacement = &#x27;src=&#x22;&#x27; + getFileUrl(id, baseUrl, attachment.generatedFileName) + &#x27;&#x22;&#x27;;
+        html = html.replace(regex, replacement);
+      });
+    }
+
+    done(null, html);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Get Email HTML
+router.get(&#x27;/email/:id/html&#x27;, function(req, res){
+
+  // Use the headers over hostname to include any port
+  var baseUrl = req.headers.host + (req.baseUrl || &#x27;&#x27;);
+
+  mailserver.<span class="apidocCodeKeywordSpan">getEmailHTML</span>(req.params.id, baseUrl, function(err, html){
+    if (err) return res.status(404).json({ error: err.message });
+
+    res.send(html);
+  });
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.getOutgoingHost" id="apidoc.element.maildev.mailserver.getOutgoingHost">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>getOutgoingHost
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOutgoingHost = function () {
+  return outgoing.getOutgoingHost();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+mailServer.isOutgoingEnabled = function() {
+ return outgoing.isEnabled();
+};
+
+mailServer.getOutgoingHost = function() {
+ return outgoing.<span class="apidocCodeKeywordSpan">getOutgoingHost</span>();
+};
+
+
+/**
+* Set Auto Relay Mode, automatic send email to recipient
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.getRawEmail" id="apidoc.element.maildev.mailserver.getRawEmail">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>getRawEmail
+        <span class="apidocSignatureSpan">(id, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRawEmail = function (id, done){
+
+  mailServer.getEmail(id, function(err, email){
+    if (err) return done(err);
+
+    done(null, fs.createReadStream( path.join(tempDir, id + &#x27;.eml&#x27;) ) );
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    mailServer.relayMail(email, done);
+  });
+  return;
+}
+
+var mail = idOrMailObject;
+
+mailServer.<span class="apidocCodeKeywordSpan">getRawEmail</span>(mail.id, function(err, rawEmailStream) {
+  if (err) {
+    logger.error(&#x27;Mail Stream Error: &#x27;, err);
+    return done(err);
+  }
+
+  outgoing.relayMail(mail, rawEmailStream, isAutoRelay, done);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.isOutgoingEnabled" id="apidoc.element.maildev.mailserver.isOutgoingEnabled">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>isOutgoingEnabled
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isOutgoingEnabled = function () {
+  return outgoing.isEnabled();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Get any config settings for display
+router.get(&#x27;/config&#x27;, function(req, res){
+
+  res.json({
+    version:  pkg.version,
+    smtpPort: mailserver.port,
+    isOutgoingEnabled: mailserver.<span class="apidocCodeKeywordSpan">isOutgoingEnabled</span>(),
+    outgoingHost: mailserver.getOutgoingHost()
+  });
+
+});
+
+// Relay the email
+router.post(&#x27;/email/:id/relay/:relayTo?&#x27;, function(req, res){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.listen" id="apidoc.element.maildev.mailserver.listen">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>listen
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listen = function (callback) {
+
+  if (typeof callback !== &#x27;function&#x27;) callback = null;
+
+  // Listen on the specified port
+  smtp.listen(mailServer.port, mailServer.host, function(err) {
+    if (err) {
+      if (callback) {
+        callback(err);
+      } else {
+        throw err;
+      }
+    }
+
+    if (callback) callback();
+
+    logger.info(&#x27;MailDev SMTP Server running at %s:%s&#x27;, mailServer.host, mailServer.port);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[API docs](https://github.com/djfarrelly/MailDev/blob/master/docs/api.md).
+
+```javascript
+var MailDev = require(&#x27;maildev&#x27;);
+
+var maildev = new MailDev();
+
+maildev.<span class="apidocCodeKeywordSpan">listen</span>();
+
+maildev.on(&#x27;new&#x27;, function(email){
+  // We got a new email!
+});
+```
+
+MailDev also has a **REST API**. For more info
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.on" id="apidoc.element.maildev.mailserver.on">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>on
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var MailDev = require(&#x27;maildev&#x27;);
+
+var maildev = new MailDev();
+
+maildev.listen();
+
+maildev.<span class="apidocCodeKeywordSpan">on</span>(&#x27;new&#x27;, function(email){
+  // We got a new email!
+});
+```
+
+MailDev also has a **REST API**. For more info
+[view the docs](https://github.com/djfarrelly/MailDev/blob/master/docs/rest.md).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.relayMail" id="apidoc.element.maildev.mailserver.relayMail">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>relayMail
+        <span class="apidocSignatureSpan">(idOrMailObject, isAutoRelay, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relayMail = function (idOrMailObject, isAutoRelay, done) {
+
+  if (!outgoing.isEnabled())
+    return done(new Error(&#x27;Outgoing mail not configured&#x27;));
+
+  // isAutoRelay is an option argument
+  if (typeof isAutoRelay === &#x27;function&#x27;) {
+    done = isAutoRelay;
+    isAutoRelay = false;
+  }
+
+  // If we receive a email id, get the email object
+  if (typeof idOrMailObject === &#x27;string&#x27;) {
+    mailServer.getEmail(idOrMailObject, function(err, email) {
+      if (err) return done(err);
+      mailServer.relayMail(email, done);
+    });
+    return;
+  }
+
+  var mail = idOrMailObject;
+
+  mailServer.getRawEmail(mail.id, function(err, rawEmailStream) {
+    if (err) {
+      logger.error(&#x27;Mail Stream Error: &#x27;, err);
+      return done(err);
+    }
+
+    outgoing.relayMail(mail, rawEmailStream, isAutoRelay, done);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  object.source = path.join(tempDir, id + &#x27;.eml&#x27;);
+
+  store.push(object);
+
+  logger.log(&#x27;Saving email: &#x27;, mailObject.subject);
+
+  if (outgoing.isAutoRelayEnabled()) {
+    mailServer.<span class="apidocCodeKeywordSpan">relayMail</span>(object, true, function (err) {
+      if (err) logger.error(&#x27;Error when relaying email&#x27;, err);
+    });
+  }
+
+  eventEmitter.emit(&#x27;new&#x27;, object);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.removeAllListeners" id="apidoc.element.maildev.mailserver.removeAllListeners">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>removeAllListeners
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeAllListeners = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.removeListener" id="apidoc.element.maildev.mailserver.removeListener">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>removeListener
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeListener = function () { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return function onConnection(socket) {
+
+    // When a new email arrives, the &#x27;new&#x27; event will be emitted
+    mailserver.on(&#x27;new&#x27;, emitNewMail(socket));
+    mailserver.on(&#x27;delete&#x27;, emitDeleteMail(socket));
+
+    socket.on(&#x27;disconnect&#x27;, function(){
+      mailserver.<span class="apidocCodeKeywordSpan">removeListener</span>(&#x27;new&#x27;, emitNewMail(socket));
+      mailserver.removeListener(&#x27;delete&#x27;, emitDeleteMail(socket));
+    });
+
+  };
+}
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.setAutoRelayMode" id="apidoc.element.maildev.mailserver.setAutoRelayMode">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>setAutoRelayMode
+        <span class="apidocSignatureSpan">(enabled, rules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAutoRelayMode = function (enabled, rules) {
+  outgoing.setAutoRelayMode(enabled, rules);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    config.outgoingUser,
+    config.outgoingPass,
+    config.outgoingSecure
+  );
+}
+
+if (config.autoRelay){
+  mailserver.<span class="apidocCodeKeywordSpan">setAutoRelayMode</span>(true, config.autoRelayRules);
+}
+
+// Default to run on same IP as smtp
+var webIp = config.webIp ? config.webIp : config.ip;
+web.start(config.web, webIp, mailserver, config.webUser, config.webPass, config.basePathname);
+
+if (config.open){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.mailserver.setupOutgoing" id="apidoc.element.maildev.mailserver.setupOutgoing">
+        function <span class="apidocSignatureSpan">maildev.mailserver.</span>setupOutgoing
+        <span class="apidocSignatureSpan">(host, port, user, pass, secure)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setupOutgoing = function (host, port, user, pass, secure) {
+  outgoing.setup(host, port, user, pass, secure);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (config.outgoingHost ||
+    config.outgoingPort ||
+    config.outgoingUser ||
+    config.outgoingPass ||
+    config.outgoingSecure) {
+
+  mailserver.<span class="apidocCodeKeywordSpan">setupOutgoing</span>(
+    config.outgoingHost,
+    parseInt(config.outgoingPort),
+    config.outgoingUser,
+    config.outgoingPass,
+    config.outgoingSecure
+  );
+}
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maildev.outgoing" id="apidoc.module.maildev.outgoing">module maildev.outgoing</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.outgoing._createClient" id="apidoc.element.maildev.outgoing._createClient">
+        function <span class="apidocSignatureSpan">maildev.outgoing.</span>_createClient
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createClient = function () {
+  try {
+    client = new SMTPConnection({
+      port: config.port,
+      host: config.host,
+      secure: config.secure,
+      auth: (config.pass &#x26;&#x26; config.user) ?
+            { user: config.user, pass: config.pass } :
+            false,
+      tls: { rejectUnauthorized: false },
+      debug: true
+    });
+
+    logger.info(
+      &#x27;MailDev outgoing SMTP Server %s:%d (user:%s, pass:%s, secure:%s)&#x27;,
+      config.host,
+      config.port,
+      config.user,
+      config.pass ? &#x27;####&#x27; : config.pass,
+      config.secure ? &#x27;yes&#x27; : &#x27;no&#x27;
+    );
+  } catch (err){
+    logger.error(&#x27;Error during configuration of SMTP Server for outgoing email&#x27;, err);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  config.host = host;
+  config.port = port;
+  config.user = user;
+  config.pass = pass;
+  config.secure = secure;
+
+  this.<span class="apidocCodeKeywordSpan">_createClient</span>();
+
+  // Create a queue to sent out the emails
+  // We use a queue so we don&#x27;t run into concurrency issues
+  emailQueue = async.queue(relayWorker, 1);
+};
+
+outgoing._createClient = function() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.outgoing.close" id="apidoc.element.maildev.outgoing.close">
+        function <span class="apidocSignatureSpan">maildev.outgoing.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+  if (this.isEnabled())
+    client.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Stop the mailserver
+*/
+
+mailServer.end = function(callback) {
+ var method = legacy ? &#x27;end&#x27; : &#x27;close&#x27;;
+ smtp[method](callback);
+ outgoing.<span class="apidocCodeKeywordSpan">close</span>();
+};
+
+
+/**
+* Extend Event Emitter methods
+* events:
+*   &#x27;new&#x27; - emitted when new email has arrived
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.outgoing.getOutgoingHost" id="apidoc.element.maildev.outgoing.getOutgoingHost">
+        function <span class="apidocSignatureSpan">maildev.outgoing.</span>getOutgoingHost
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOutgoingHost = function () {
+  return config.host;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+mailServer.isOutgoingEnabled = function() {
+ return outgoing.isEnabled();
+};
+
+mailServer.getOutgoingHost = function() {
+ return outgoing.<span class="apidocCodeKeywordSpan">getOutgoingHost</span>();
+};
+
+
+/**
+* Set Auto Relay Mode, automatic send email to recipient
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.outgoing.isAutoRelayEnabled" id="apidoc.element.maildev.outgoing.isAutoRelayEnabled">
+        function <span class="apidocSignatureSpan">maildev.outgoing.</span>isAutoRelayEnabled
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAutoRelayEnabled = function () {
+  return config.autoRelay;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  object.envelope = envelope;
+  object.source = path.join(tempDir, id + &#x27;.eml&#x27;);
+
+  store.push(object);
+
+  logger.log(&#x27;Saving email: &#x27;, mailObject.subject);
+
+  if (outgoing.<span class="apidocCodeKeywordSpan">isAutoRelayEnabled</span>()) {
+    mailServer.relayMail(object, true, function (err) {
+      if (err) logger.error(&#x27;Error when relaying email&#x27;, err);
+    });
+  }
+
+  eventEmitter.emit(&#x27;new&#x27;, object);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.outgoing.isEnabled" id="apidoc.element.maildev.outgoing.isEnabled">
+        function <span class="apidocSignatureSpan">maildev.outgoing.</span>isEnabled
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isEnabled = function () {
+  return !!client;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Setup outgoing
+ */
+mailServer.setupOutgoing = function(host, port, user, pass, secure) {
+  outgoing.setup(host, port, user, pass, secure);
+};
+
+mailServer.isOutgoingEnabled = function() {
+  return outgoing.<span class="apidocCodeKeywordSpan">isEnabled</span>();
+};
+
+mailServer.getOutgoingHost = function() {
+  return outgoing.getOutgoingHost();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.outgoing.relayMail" id="apidoc.element.maildev.outgoing.relayMail">
+        function <span class="apidocSignatureSpan">maildev.outgoing.</span>relayMail
+        <span class="apidocSignatureSpan">(emailObject, emailStream, isAutoRelay, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relayMail = function (emailObject, emailStream, isAutoRelay, callback) {
+  emailQueue.push({
+    emailObject: emailObject,
+    emailStream: emailStream,
+    isAutoRelay: isAutoRelay,
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  object.source = path.join(tempDir, id + &#x27;.eml&#x27;);
+
+  store.push(object);
+
+  logger.log(&#x27;Saving email: &#x27;, mailObject.subject);
+
+  if (outgoing.isAutoRelayEnabled()) {
+    mailServer.<span class="apidocCodeKeywordSpan">relayMail</span>(object, true, function (err) {
+      if (err) logger.error(&#x27;Error when relaying email&#x27;, err);
+    });
+  }
+
+  eventEmitter.emit(&#x27;new&#x27;, object);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.outgoing.setAutoRelayMode" id="apidoc.element.maildev.outgoing.setAutoRelayMode">
+        function <span class="apidocSignatureSpan">maildev.outgoing.</span>setAutoRelayMode
+        <span class="apidocSignatureSpan">(enabled, rules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAutoRelayMode = function (enabled, rules) {
+
+  if (!client){
+    config.autoRelay = false;
+    logger.info(&#x27;Outgoing mail not configured - Auto relay mode ignored&#x27;);
+    return;
+  }
+
+  if (rules) {
+
+    if (typeof rules === &#x27;string&#x27;) {
+      try {
+        rules = JSON.parse(fs.readFileSync(rules, &#x27;utf8&#x27;));
+      } catch (err) {
+        logger.error(&#x27;Error reading config file at &#x27; + rules);
+        throw err;
+      }
+    }
+
+    if (Array.isArray(rules)) {
+      config.autoRelayRules = rules;
+    }
+  }
+
+  config.autoRelay = enabled;
+
+  if (config.autoRelay) {
+    logger.info(
+      &#x27;Auto-Relay mode on, relay rules: %s&#x27;,
+      JSON.stringify(config.autoRelayRules)
+    );
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    config.outgoingUser,
+    config.outgoingPass,
+    config.outgoingSecure
+  );
+}
+
+if (config.autoRelay){
+  mailserver.<span class="apidocCodeKeywordSpan">setAutoRelayMode</span>(true, config.autoRelayRules);
+}
+
+// Default to run on same IP as smtp
+var webIp = config.webIp ? config.webIp : config.ip;
+web.start(config.web, webIp, mailserver, config.webUser, config.webPass, config.basePathname);
+
+if (config.open){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.outgoing.setup" id="apidoc.element.maildev.outgoing.setup">
+        function <span class="apidocSignatureSpan">maildev.outgoing.</span>setup
+        <span class="apidocSignatureSpan">(host, port, user, pass, secure)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setup = function (host, port, user, pass, secure) {
+
+  //defaults
+  port = port || (secure ? 465 : 25);
+  host = host || &#x27;localhost&#x27;;
+  secure = secure || false;
+
+  config.host = host;
+  config.port = port;
+  config.user = user;
+  config.pass = pass;
+  config.secure = secure;
+
+  this._createClient();
+
+  // Create a queue to sent out the emails
+  // We use a queue so we don&#x27;t run into concurrency issues
+  emailQueue = async.queue(relayWorker, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+};
+
+/**
+ * Setup outgoing
+ */
+mailServer.setupOutgoing = function(host, port, user, pass, secure) {
+  outgoing.<span class="apidocCodeKeywordSpan">setup</span>(host, port, user, pass, secure);
+};
+
+mailServer.isOutgoingEnabled = function() {
+  return outgoing.isEnabled();
+};
+
+mailServer.getOutgoingHost = function() {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.maildev.web" id="apidoc.module.maildev.web">module maildev.web</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.web.close" id="apidoc.element.maildev.web.close">
+        function <span class="apidocSignatureSpan">maildev.web.</span>close
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (callback) {
+  server.close(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+* Stop the mailserver
+*/
+
+mailServer.end = function(callback) {
+ var method = legacy ? &#x27;end&#x27; : &#x27;close&#x27;;
+ smtp[method](callback);
+ outgoing.<span class="apidocCodeKeywordSpan">close</span>();
+};
+
+
+/**
+* Extend Event Emitter methods
+* events:
+*   &#x27;new&#x27; - emitted when new email has arrived
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.web.start" id="apidoc.element.maildev.web.start">
+        function <span class="apidocSignatureSpan">maildev.web.</span>start
+        <span class="apidocSignatureSpan">(port, host, mailserver, user, password, basePathname)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (port, host, mailserver, user, password, basePathname) {
+
+  if (user &#x26;&#x26; password) {
+    app.use(auth(user, password));
+  }
+
+  if (basePathname) {
+    io.path(basePathname + &#x27;/socket.io&#x27;);
+  } else {
+    basePathname = &#x27;/&#x27;;
+  }
+
+  app.use(basePathname, express.static(path.join(__dirname, &#x27;../app&#x27;)));
+
+  routes(app, mailserver, basePathname);
+
+  io.attach(server);
+  io.on(&#x27;connection&#x27;, webSocketConnection(mailserver));
+
+  port = port || 1080;
+  host = host || &#x27;0.0.0.0&#x27;;
+
+  server.listen(port, host);
+
+  logger.info(&#x27;MailDev app running at %s:%s&#x27;, host, port);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (config.autoRelay){
+  mailserver.setAutoRelayMode(true, config.autoRelayRules);
+}
+
+// Default to run on same IP as smtp
+var webIp = config.webIp ? config.webIp : config.ip;
+web.<span class="apidocCodeKeywordSpan">start</span>(config.web, webIp, mailserver, config.webUser, config.webPass, config.basePathname
+);
+
+if (config.open){
+  var open = require(&#x27;open&#x27;);
+  open(&#x27;http://&#x27; + (config.ip === &#x27;0.0.0.0&#x27; ? &#x27;localhost&#x27; : config.ip) + &#x27;:&#x27; + config.web
+);
+}
+
+process.on(&#x27;SIGTERM&#x27;, function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
