@@ -1,111 +1,113 @@
-<svg height="1726" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="1726" fill="#555" width="720"></rect>
+<svg height="1758" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="1758" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">13 megabytes</tspan>
-<tspan x="10" y="42">└─┬ maildev@0.14.0 </tspan>
-<tspan x="10" y="58">  ├── async@1.5.1 </tspan>
-<tspan x="10" y="74">  ├─┬ commander@2.9.0 </tspan>
-<tspan x="10" y="90">  │ └── graceful-readlink@1.0.1 </tspan>
-<tspan x="10" y="106">  ├─┬ express@4.13.4 </tspan>
-<tspan x="10" y="122">  │ ├─┬ accepts@1.2.13 </tspan>
-<tspan x="10" y="138">  │ │ ├─┬ mime-types@2.1.15 </tspan>
-<tspan x="10" y="154">  │ │ │ └── mime-db@1.27.0 </tspan>
-<tspan x="10" y="170">  │ │ └── negotiator@0.5.3 </tspan>
-<tspan x="10" y="186">  │ ├── array-flatten@1.1.1 </tspan>
-<tspan x="10" y="202">  │ ├── content-disposition@0.5.1 </tspan>
-<tspan x="10" y="218">  │ ├── content-type@1.0.2 </tspan>
-<tspan x="10" y="234">  │ ├── cookie@0.1.5 </tspan>
-<tspan x="10" y="250">  │ ├── cookie-signature@1.0.6 </tspan>
-<tspan x="10" y="266">  │ ├─┬ debug@2.2.0 </tspan>
-<tspan x="10" y="282">  │ │ └── ms@0.7.1 </tspan>
-<tspan x="10" y="298">  │ ├── depd@1.1.0 </tspan>
-<tspan x="10" y="314">  │ ├── escape-html@1.0.3 </tspan>
-<tspan x="10" y="330">  │ ├── etag@1.7.0 </tspan>
-<tspan x="10" y="346">  │ ├─┬ finalhandler@0.4.1 </tspan>
-<tspan x="10" y="362">  │ │ └── unpipe@1.0.0 </tspan>
-<tspan x="10" y="378">  │ ├── fresh@0.3.0 </tspan>
-<tspan x="10" y="394">  │ ├── merge-descriptors@1.0.1 </tspan>
-<tspan x="10" y="410">  │ ├── methods@1.1.2 </tspan>
-<tspan x="10" y="426">  │ ├─┬ on-finished@2.3.0 </tspan>
-<tspan x="10" y="442">  │ │ └── ee-first@1.1.1 </tspan>
-<tspan x="10" y="458">  │ ├── parseurl@1.3.1 </tspan>
-<tspan x="10" y="474">  │ ├── path-to-regexp@0.1.7 </tspan>
-<tspan x="10" y="490">  │ ├─┬ proxy-addr@1.0.10 </tspan>
-<tspan x="10" y="506">  │ │ ├── forwarded@0.1.0 </tspan>
-<tspan x="10" y="522">  │ │ └── ipaddr.js@1.0.5 </tspan>
-<tspan x="10" y="538">  │ ├── qs@4.0.0 </tspan>
-<tspan x="10" y="554">  │ ├── range-parser@1.0.3 </tspan>
-<tspan x="10" y="570">  │ ├─┬ send@0.13.1 </tspan>
-<tspan x="10" y="586">  │ │ ├── destroy@1.0.4 </tspan>
-<tspan x="10" y="602">  │ │ ├─┬ http-errors@1.3.1 </tspan>
-<tspan x="10" y="618">  │ │ │ └── inherits@2.0.3 </tspan>
-<tspan x="10" y="634">  │ │ └── statuses@1.2.1 </tspan>
-<tspan x="10" y="650">  │ ├─┬ serve-static@1.10.3 </tspan>
-<tspan x="10" y="666">  │ │ └── send@0.13.2 </tspan>
-<tspan x="10" y="682">  │ ├─┬ type-is@1.6.15 </tspan>
-<tspan x="10" y="698">  │ │ └── media-typer@0.3.0 </tspan>
-<tspan x="10" y="714">  │ ├── utils-merge@1.0.0 </tspan>
-<tspan x="10" y="730">  │ └── vary@1.0.1 </tspan>
-<tspan x="10" y="746">  ├─┬ mailparser@0.5.3 </tspan>
-<tspan x="10" y="762">  │ ├─┬ encoding@0.1.12 </tspan>
-<tspan x="10" y="778">  │ │ └── iconv-lite@0.4.15 </tspan>
-<tspan x="10" y="794">  │ ├── mime@1.3.4 </tspan>
-<tspan x="10" y="810">  │ ├─┬ mimelib@0.2.19 </tspan>
-<tspan x="10" y="826">  │ │ └── addressparser@0.3.2 </tspan>
-<tspan x="10" y="842">  │ └─┬ uue@3.1.0 </tspan>
-<tspan x="10" y="858">  │   └── extend@3.0.0 </tspan>
-<tspan x="10" y="874">  ├── open@0.0.5 </tspan>
-<tspan x="10" y="890">  ├─┬ simplesmtp@0.3.35 </tspan>
-<tspan x="10" y="906">  │ ├── rai@0.1.12 </tspan>
-<tspan x="10" y="922">  │ └── xoauth2@0.1.8 </tspan>
-<tspan x="10" y="938">  ├─┬ smtp-connection@2.3.1 </tspan>
-<tspan x="10" y="954">  │ └─┬ nodemailer-shared@1.0.4 </tspan>
-<tspan x="10" y="970">  │   └── nodemailer-fetch@1.3.0 </tspan>
-<tspan x="10" y="986">  ├── smtp-server@1.4.0 </tspan>
-<tspan x="10" y="1002">  ├─┬ socket.io@1.4.5 </tspan>
-<tspan x="10" y="1018">  │ ├─┬ engine.io@1.6.8 </tspan>
-<tspan x="10" y="1034">  │ │ ├─┬ accepts@1.1.4 </tspan>
-<tspan x="10" y="1050">  │ │ │ ├─┬ mime-types@2.0.14 </tspan>
-<tspan x="10" y="1066">  │ │ │ │ └── mime-db@1.12.0 </tspan>
-<tspan x="10" y="1082">  │ │ │ └── negotiator@0.4.9 </tspan>
-<tspan x="10" y="1098">  │ │ ├── base64id@0.1.0 </tspan>
-<tspan x="10" y="1114">  │ │ ├─┬ engine.io-parser@1.2.4 </tspan>
-<tspan x="10" y="1130">  │ │ │ ├── after@0.8.1 </tspan>
-<tspan x="10" y="1146">  │ │ │ ├── arraybuffer.slice@0.0.6 </tspan>
-<tspan x="10" y="1162">  │ │ │ ├── base64-arraybuffer@0.1.2 </tspan>
-<tspan x="10" y="1178">  │ │ │ ├── blob@0.0.4 </tspan>
-<tspan x="10" y="1194">  │ │ │ ├── has-binary@0.1.6 </tspan>
-<tspan x="10" y="1210">  │ │ │ └── utf8@2.1.0 </tspan>
-<tspan x="10" y="1226">  │ │ └─┬ ws@1.0.1 </tspan>
-<tspan x="10" y="1242">  │ │   ├── options@0.0.6 </tspan>
-<tspan x="10" y="1258">  │ │   └── ultron@1.0.2 </tspan>
-<tspan x="10" y="1274">  │ ├─┬ has-binary@0.1.7 </tspan>
-<tspan x="10" y="1290">  │ │ └── isarray@0.0.1 </tspan>
-<tspan x="10" y="1306">  │ ├─┬ socket.io-adapter@0.4.0 </tspan>
-<tspan x="10" y="1322">  │ │ └─┬ socket.io-parser@2.2.2 </tspan>
-<tspan x="10" y="1338">  │ │   ├── debug@0.7.4 </tspan>
-<tspan x="10" y="1354">  │ │   └── json3@3.2.6 </tspan>
-<tspan x="10" y="1370">  │ ├─┬ socket.io-client@1.4.5 </tspan>
-<tspan x="10" y="1386">  │ │ ├── backo2@1.0.2 </tspan>
-<tspan x="10" y="1402">  │ │ ├── component-bind@1.0.0 </tspan>
-<tspan x="10" y="1418">  │ │ ├── component-emitter@1.2.0 </tspan>
-<tspan x="10" y="1434">  │ │ ├─┬ engine.io-client@1.6.8 </tspan>
-<tspan x="10" y="1450">  │ │ │ ├── component-inherit@0.0.3 </tspan>
-<tspan x="10" y="1466">  │ │ │ ├── has-cors@1.1.0 </tspan>
-<tspan x="10" y="1482">  │ │ │ ├── parsejson@0.0.1 </tspan>
-<tspan x="10" y="1498">  │ │ │ ├── parseqs@0.0.2 </tspan>
-<tspan x="10" y="1514">  │ │ │ ├── xmlhttprequest-ssl@1.5.1 </tspan>
-<tspan x="10" y="1530">  │ │ │ └── yeast@0.1.2 </tspan>
-<tspan x="10" y="1546">  │ │ ├── indexof@0.0.1 </tspan>
-<tspan x="10" y="1562">  │ │ ├── object-component@0.0.3 </tspan>
-<tspan x="10" y="1578">  │ │ ├─┬ parseuri@0.0.4 </tspan>
-<tspan x="10" y="1594">  │ │ │ └─┬ better-assert@1.0.2 </tspan>
-<tspan x="10" y="1610">  │ │ │   └── callsite@1.0.0 </tspan>
-<tspan x="10" y="1626">  │ │ └── to-array@0.1.4 </tspan>
-<tspan x="10" y="1642">  │ └─┬ socket.io-parser@2.2.6 </tspan>
-<tspan x="10" y="1658">  │   ├── benchmark@1.0.0 </tspan>
-<tspan x="10" y="1674">  │   ├── component-emitter@1.1.2 </tspan>
-<tspan x="10" y="1690">  │   └── json3@3.3.2 </tspan>
-<tspan x="10" y="1706">  └── wildstring@1.0.8</tspan>
+<tspan x="10" y="26">13 megabytes installed</tspan>
+<tspan x="10" y="42"></tspan>
+<tspan x="10" y="58">node_modules</tspan>
+<tspan x="10" y="74">└─┬ maildev@0.14.0 </tspan>
+<tspan x="10" y="90">  ├── async@1.5.1 </tspan>
+<tspan x="10" y="106">  ├─┬ commander@2.9.0 </tspan>
+<tspan x="10" y="122">  │ └── graceful-readlink@1.0.1 </tspan>
+<tspan x="10" y="138">  ├─┬ express@4.13.4 </tspan>
+<tspan x="10" y="154">  │ ├─┬ accepts@1.2.13 </tspan>
+<tspan x="10" y="170">  │ │ ├─┬ mime-types@2.1.15 </tspan>
+<tspan x="10" y="186">  │ │ │ └── mime-db@1.27.0 </tspan>
+<tspan x="10" y="202">  │ │ └── negotiator@0.5.3 </tspan>
+<tspan x="10" y="218">  │ ├── array-flatten@1.1.1 </tspan>
+<tspan x="10" y="234">  │ ├── content-disposition@0.5.1 </tspan>
+<tspan x="10" y="250">  │ ├── content-type@1.0.2 </tspan>
+<tspan x="10" y="266">  │ ├── cookie@0.1.5 </tspan>
+<tspan x="10" y="282">  │ ├── cookie-signature@1.0.6 </tspan>
+<tspan x="10" y="298">  │ ├─┬ debug@2.2.0 </tspan>
+<tspan x="10" y="314">  │ │ └── ms@0.7.1 </tspan>
+<tspan x="10" y="330">  │ ├── depd@1.1.0 </tspan>
+<tspan x="10" y="346">  │ ├── escape-html@1.0.3 </tspan>
+<tspan x="10" y="362">  │ ├── etag@1.7.0 </tspan>
+<tspan x="10" y="378">  │ ├─┬ finalhandler@0.4.1 </tspan>
+<tspan x="10" y="394">  │ │ └── unpipe@1.0.0 </tspan>
+<tspan x="10" y="410">  │ ├── fresh@0.3.0 </tspan>
+<tspan x="10" y="426">  │ ├── merge-descriptors@1.0.1 </tspan>
+<tspan x="10" y="442">  │ ├── methods@1.1.2 </tspan>
+<tspan x="10" y="458">  │ ├─┬ on-finished@2.3.0 </tspan>
+<tspan x="10" y="474">  │ │ └── ee-first@1.1.1 </tspan>
+<tspan x="10" y="490">  │ ├── parseurl@1.3.1 </tspan>
+<tspan x="10" y="506">  │ ├── path-to-regexp@0.1.7 </tspan>
+<tspan x="10" y="522">  │ ├─┬ proxy-addr@1.0.10 </tspan>
+<tspan x="10" y="538">  │ │ ├── forwarded@0.1.0 </tspan>
+<tspan x="10" y="554">  │ │ └── ipaddr.js@1.0.5 </tspan>
+<tspan x="10" y="570">  │ ├── qs@4.0.0 </tspan>
+<tspan x="10" y="586">  │ ├── range-parser@1.0.3 </tspan>
+<tspan x="10" y="602">  │ ├─┬ send@0.13.1 </tspan>
+<tspan x="10" y="618">  │ │ ├── destroy@1.0.4 </tspan>
+<tspan x="10" y="634">  │ │ ├─┬ http-errors@1.3.1 </tspan>
+<tspan x="10" y="650">  │ │ │ └── inherits@2.0.3 </tspan>
+<tspan x="10" y="666">  │ │ └── statuses@1.2.1 </tspan>
+<tspan x="10" y="682">  │ ├─┬ serve-static@1.10.3 </tspan>
+<tspan x="10" y="698">  │ │ └── send@0.13.2 </tspan>
+<tspan x="10" y="714">  │ ├─┬ type-is@1.6.15 </tspan>
+<tspan x="10" y="730">  │ │ └── media-typer@0.3.0 </tspan>
+<tspan x="10" y="746">  │ ├── utils-merge@1.0.0 </tspan>
+<tspan x="10" y="762">  │ └── vary@1.0.1 </tspan>
+<tspan x="10" y="778">  ├─┬ mailparser@0.5.3 </tspan>
+<tspan x="10" y="794">  │ ├─┬ encoding@0.1.12 </tspan>
+<tspan x="10" y="810">  │ │ └── iconv-lite@0.4.15 </tspan>
+<tspan x="10" y="826">  │ ├── mime@1.3.4 </tspan>
+<tspan x="10" y="842">  │ ├─┬ mimelib@0.2.19 </tspan>
+<tspan x="10" y="858">  │ │ └── addressparser@0.3.2 </tspan>
+<tspan x="10" y="874">  │ └─┬ uue@3.1.0 </tspan>
+<tspan x="10" y="890">  │   └── extend@3.0.0 </tspan>
+<tspan x="10" y="906">  ├── open@0.0.5 </tspan>
+<tspan x="10" y="922">  ├─┬ simplesmtp@0.3.35 </tspan>
+<tspan x="10" y="938">  │ ├── rai@0.1.12 </tspan>
+<tspan x="10" y="954">  │ └── xoauth2@0.1.8 </tspan>
+<tspan x="10" y="970">  ├─┬ smtp-connection@2.3.1 </tspan>
+<tspan x="10" y="986">  │ └─┬ nodemailer-shared@1.0.4 </tspan>
+<tspan x="10" y="1002">  │   └── nodemailer-fetch@1.3.0 </tspan>
+<tspan x="10" y="1018">  ├── smtp-server@1.4.0 </tspan>
+<tspan x="10" y="1034">  ├─┬ socket.io@1.4.5 </tspan>
+<tspan x="10" y="1050">  │ ├─┬ engine.io@1.6.8 </tspan>
+<tspan x="10" y="1066">  │ │ ├─┬ accepts@1.1.4 </tspan>
+<tspan x="10" y="1082">  │ │ │ ├─┬ mime-types@2.0.14 </tspan>
+<tspan x="10" y="1098">  │ │ │ │ └── mime-db@1.12.0 </tspan>
+<tspan x="10" y="1114">  │ │ │ └── negotiator@0.4.9 </tspan>
+<tspan x="10" y="1130">  │ │ ├── base64id@0.1.0 </tspan>
+<tspan x="10" y="1146">  │ │ ├─┬ engine.io-parser@1.2.4 </tspan>
+<tspan x="10" y="1162">  │ │ │ ├── after@0.8.1 </tspan>
+<tspan x="10" y="1178">  │ │ │ ├── arraybuffer.slice@0.0.6 </tspan>
+<tspan x="10" y="1194">  │ │ │ ├── base64-arraybuffer@0.1.2 </tspan>
+<tspan x="10" y="1210">  │ │ │ ├── blob@0.0.4 </tspan>
+<tspan x="10" y="1226">  │ │ │ ├── has-binary@0.1.6 </tspan>
+<tspan x="10" y="1242">  │ │ │ └── utf8@2.1.0 </tspan>
+<tspan x="10" y="1258">  │ │ └─┬ ws@1.0.1 </tspan>
+<tspan x="10" y="1274">  │ │   ├── options@0.0.6 </tspan>
+<tspan x="10" y="1290">  │ │   └── ultron@1.0.2 </tspan>
+<tspan x="10" y="1306">  │ ├─┬ has-binary@0.1.7 </tspan>
+<tspan x="10" y="1322">  │ │ └── isarray@0.0.1 </tspan>
+<tspan x="10" y="1338">  │ ├─┬ socket.io-adapter@0.4.0 </tspan>
+<tspan x="10" y="1354">  │ │ └─┬ socket.io-parser@2.2.2 </tspan>
+<tspan x="10" y="1370">  │ │   ├── debug@0.7.4 </tspan>
+<tspan x="10" y="1386">  │ │   └── json3@3.2.6 </tspan>
+<tspan x="10" y="1402">  │ ├─┬ socket.io-client@1.4.5 </tspan>
+<tspan x="10" y="1418">  │ │ ├── backo2@1.0.2 </tspan>
+<tspan x="10" y="1434">  │ │ ├── component-bind@1.0.0 </tspan>
+<tspan x="10" y="1450">  │ │ ├── component-emitter@1.2.0 </tspan>
+<tspan x="10" y="1466">  │ │ ├─┬ engine.io-client@1.6.8 </tspan>
+<tspan x="10" y="1482">  │ │ │ ├── component-inherit@0.0.3 </tspan>
+<tspan x="10" y="1498">  │ │ │ ├── has-cors@1.1.0 </tspan>
+<tspan x="10" y="1514">  │ │ │ ├── parsejson@0.0.1 </tspan>
+<tspan x="10" y="1530">  │ │ │ ├── parseqs@0.0.2 </tspan>
+<tspan x="10" y="1546">  │ │ │ ├── xmlhttprequest-ssl@1.5.1 </tspan>
+<tspan x="10" y="1562">  │ │ │ └── yeast@0.1.2 </tspan>
+<tspan x="10" y="1578">  │ │ ├── indexof@0.0.1 </tspan>
+<tspan x="10" y="1594">  │ │ ├── object-component@0.0.3 </tspan>
+<tspan x="10" y="1610">  │ │ ├─┬ parseuri@0.0.4 </tspan>
+<tspan x="10" y="1626">  │ │ │ └─┬ better-assert@1.0.2 </tspan>
+<tspan x="10" y="1642">  │ │ │   └── callsite@1.0.0 </tspan>
+<tspan x="10" y="1658">  │ │ └── to-array@0.1.4 </tspan>
+<tspan x="10" y="1674">  │ └─┬ socket.io-parser@2.2.6 </tspan>
+<tspan x="10" y="1690">  │   ├── benchmark@1.0.0 </tspan>
+<tspan x="10" y="1706">  │   ├── component-emitter@1.1.2 </tspan>
+<tspan x="10" y="1722">  │   └── json3@3.3.2 </tspan>
+<tspan x="10" y="1738">  └── wildstring@1.0.8</tspan>
 </text>
 </svg>

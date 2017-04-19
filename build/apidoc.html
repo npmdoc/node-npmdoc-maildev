@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.maildev.maildev">
+            function <span class="apidocSignatureSpan"></span>maildev
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">maildev.</span>logger</span>
 
         </li>
@@ -437,6 +446,97 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.maildev" id="apidoc.module.maildev">module maildev</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.maildev.maildev" id="apidoc.element.maildev.maildev">
+        function <span class="apidocSignatureSpan"></span>maildev
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">maildev = function (config) {
+
+  var version = pkg.version;
+
+  if (!config) {
+    // CLI
+    config = program
+      .version(version)
+      .option(&#x27;-s, --smtp &#x3c;port&#x3e;&#x27;, &#x27;SMTP port to catch emails [1025]&#x27;, &#x27;1025&#x27;)
+      .option(&#x27;-w, --web &#x3c;port&#x3e;&#x27;, &#x27;Port to run the Web GUI [1080]&#x27;, &#x27;1080&#x27;)
+      .option(&#x27;--ip &#x3c;ip address&#x3e;&#x27;, &#x27;IP Address to bind SMTP service to&#x27;, &#x27;0.0.0.0&#x27;)
+      .option(&#x27;--outgoing-host &#x3c;host&#x3e;&#x27;, &#x27;SMTP host for outgoing emails&#x27;)
+      .option(&#x27;--outgoing-port &#x3c;port&#x3e;&#x27;, &#x27;SMTP port for outgoing emails&#x27;)
+      .option(&#x27;--outgoing-user &#x3c;user&#x3e;&#x27;, &#x27;SMTP user for outgoing emails&#x27;)
+      .option(&#x27;--outgoing-pass &#x3c;password&#x3e;&#x27;, &#x27;SMTP password for outgoing emails&#x27;)
+      .option(&#x27;--outgoing-secure&#x27;, &#x27;Use SMTP SSL for outgoing emails&#x27;)
+      .option(&#x27;--auto-relay&#x27;, &#x27;Use auto-relay mode&#x27;)
+      .option(&#x27;--auto-relay-rules &#x3c;file&#x3e;&#x27;, &#x27;Filter rules for auto relay mode&#x27;)
+      .option(&#x27;--incoming-user &#x3c;user&#x3e;&#x27;, &#x27;SMTP user for incoming emails&#x27;)
+      .option(&#x27;--incoming-pass &#x3c;pass&#x3e;&#x27;, &#x27;SMTP password for incoming emails&#x27;)
+      .option(&#x27;--web-ip &#x3c;ip address&#x3e;&#x27;, &#x27;IP Address to bind HTTP service to, defaults to --ip&#x27;)
+      .option(&#x27;--web-user &#x3c;user&#x3e;&#x27;, &#x27;HTTP user for GUI&#x27;)
+      .option(&#x27;--web-pass &#x3c;password&#x3e;&#x27;, &#x27;HTTP password for GUI&#x27;)
+      .option(&#x27;--base-pathname &#x3c;path&#x3e;&#x27;, &#x27;base path for URLs&#x27;)
+      .option(&#x27;-o, --open&#x27;, &#x27;Open the Web GUI after startup&#x27;)
+      .option(&#x27;-v, --verbose&#x27;)
+      .option(&#x27;--silent&#x27;)
+      .parse(process.argv);
+  }
+
+  if (config.verbose) {
+    logger.setLevel(2);
+  } else if (config.silent) {
+    logger.setLevel(0);
+  }
+
+  // Start the Mailserver &#x26; Web GUI
+  mailserver.create(config.smtp, config.ip, config.incomingUser, config.incomingPass);
+
+  if (config.outgoingHost ||
+      config.outgoingPort ||
+      config.outgoingUser ||
+      config.outgoingPass ||
+      config.outgoingSecure) {
+
+    mailserver.setupOutgoing(
+      config.outgoingHost,
+      parseInt(config.outgoingPort),
+      config.outgoingUser,
+      config.outgoingPass,
+      config.outgoingSecure
+    );
+  }
+
+  if (config.autoRelay){
+    mailserver.setAutoRelayMode(true, config.autoRelayRules);
+  }
+
+  // Default to run on same IP as smtp
+  var webIp = config.webIp ? config.webIp : config.ip;
+  web.start(config.web, webIp, mailserver, config.webUser, config.webPass, config.basePathname);
+
+  if (config.open){
+    var open = require(&#x27;open&#x27;);
+    open(&#x27;http://&#x27; + (config.ip === &#x27;0.0.0.0&#x27; ? &#x27;localhost&#x27; : config.ip) + &#x27;:&#x27; + config.web);
+  }
+
+  process.on(&#x27;SIGTERM&#x27;, function () {
+    async.parallel([
+      mailserver.end,
+      web.close
+    ], function(err, results) {
+      logger.info(&#x27;Shutting down...&#x27;);
+      process.exit(0);
+    });
+  });
+
+  return mailserver;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
 
